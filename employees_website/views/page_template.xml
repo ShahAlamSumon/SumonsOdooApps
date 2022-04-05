@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="team_web_page">
+        <t t-call="website.layout">
+            <div class="container-fluid">
+                <h3 style='text-align:center'>Our Teams</h3>
+                <div class="row">
+                    <table class="table table-bordered mb16">
+                        <tr t-foreach="[employees[x:x+4] for x in range(0, len(employees), 4)]" t-as="employee_list">
+                            <td t-foreach="employee_list" t-as="employee">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-4">
+                                        <img t-att-src="image_data_uri(employee.image_128)"
+                                             class="img shadow rounded img-fluid d-block mx-auto"/>
+                                    </div>
+                                    <div class="col-sm-6 col-md-8">
+                                        <h5><span t-esc="employee.name"/></h5>
+                                        <span style="font-size: 90%;" t-esc="employee.department_id.name"/>
+                                        <span style="font-size: 90%;" t-esc="employee.job_id.name"/>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

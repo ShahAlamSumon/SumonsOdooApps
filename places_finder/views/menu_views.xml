@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+            name="Search Places"
+            id="menu_search_location"
+            groups="base.group_user"
+            action="action_search_location"
+            sequence="100"/>
+</odoo>

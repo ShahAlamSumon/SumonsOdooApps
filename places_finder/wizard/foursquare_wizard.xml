@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="foursquare_wizard_form" model="ir.ui.view">
+        <field name="name">foursquare.wizard.form</field>
+        <field name="model">foursquare.wizard</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <form string="Foursquare">
+                <group>
+                    <field name="client_id"/>
+                    <field name="client_secret"/>
+                </group>
+                <group>
+                    <group>
+                        <field name="version"/>
+                        <field name="limit"/>
+                        <field name="user_agent"/>
+                    </group>
+                    <group>
+                        <field name="address"/>
+                        <field name="search_query"/>
+                        <field name="radius"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="act_dataset" string="Show Dataset" type="object" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_search_location" model="ir.actions.act_window">
+        <field name="name">Find Places</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">foursquare.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
